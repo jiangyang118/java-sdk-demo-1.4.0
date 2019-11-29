@@ -71,8 +71,8 @@ public class Main {
 	private static String connectionProfilePath;
 
 	private static String channelName = "channel";
-	private static String userName = "user";
-	private static String secret = "User@1234";
+	private static String userName = "lisujuanuser123323";
+	private static String secret = "TzSWbsdNNBOZ";
 	private static String chaincodeName = "fabcar";
 	private static String chaincodeVersion = "1.0";
 
@@ -126,9 +126,9 @@ public class Main {
 			/***
 			 * 下面获取用户、注册用户、获取管理员用户。目前华为云不支持获取用户、注册用户—— 2019/11/21 14:26 by 姜阳
 			 */
-//			FabricUser user = getFabricUser(clientOrg, caInfo);
-//			FabricUser user = registerFabricUser(clientOrg, caInfo, userName);
-			FabricUser user = genFabricUser(networkConfig);
+			FabricUser user = getFabricUser(networkConfig.getClientOrganization(), caInfo);
+//			FabricUser user = registerFabricUser(networkConfig.getClientOrganization(), caInfo, userName);
+//			FabricUser user = genFabricUser(networkConfig);
 			System.err.println(user);
 
 			HFClient client = HFClient.createNewInstance();
@@ -255,12 +255,10 @@ public class Main {
 		user.setName("user1admin");
 		user.setMspId(msp);
 		File privateKeyStoreFile = new File(
-				"D:/code/huawei/blockchain/javasdkdemo/config/44d64af3f48f5517afbd17ecaa5118abaee59fb7.peer/msp/keystore/10c5b083-e5b2-e3a8-ea7d-efafdc9a3040_sk");
+				"D:/code/huawei/java/yxl-cloud-parent/yxl-blockchain/src/main/resources/config/df5596ae69f091a33400921c52118d57d8224e10.peer/msp/keystore/7cc520c5-fb21-14d8-7330-602eed55f921_sk");
 		System.err.println(privateKeyStoreFile);
 		File certificateFile = new File(
-				"D:/code/huawei/blockchain/javasdkdemo/config/44d64af3f48f5517afbd17ecaa5118abaee59fb7.peer/"
-						+ "msp/admincerts/"
-						+ "Admin@44d64af3f48f5517afbd17ecaa5118abaee59fb7.peer-44d64af3f48f5517afbd17ecaa5118abaee59fb7.default.svc.cluster.local-cert.pem");
+				"D:/code/huawei/java/yxl-cloud-parent/yxl-blockchain/src/main/resources/config/df5596ae69f091a33400921c52118d57d8224e10.peer/msp/admincerts/Admin@df5596ae69f091a33400921c52118d57d8224e10.peer-.default.svc.cluster.local-cert.pem");
 
 		System.err.println(certificateFile);
 
